@@ -45,16 +45,16 @@ The **University App Dashboard** is a full-featured university web portal built 
 
 ### Highlights
 
-| Metric | Value |
-|---|---|
-| 🎓 Degree Programs | 50+ across 6 colleges |
-| 👩‍🏫 Faculty Members | 856 |
-| 🧑‍🎓 Enrolled Students | 12,400+ |
-| 💼 Graduate Employment Rate | 95% |
-| 🔬 Annual Research Funding | $120M |
-| 🏠 Residence Halls | 3 |
-| 🏟️ Varsity Sports | 18 |
-| 🤝 Student Clubs | 60+ |
+| Metric                      | Value                 |
+| --------------------------- | --------------------- |
+| 🎓 Degree Programs          | 50+ across 6 colleges |
+| 👩‍🏫 Faculty Members          | 856                   |
+| 🧑‍🎓 Enrolled Students        | 12,400+               |
+| 💼 Graduate Employment Rate | 95%                   |
+| 🔬 Annual Research Funding  | $120M                 |
+| 🏠 Residence Halls          | 3                     |
+| 🏟️ Varsity Sports           | 18                    |
+| 🤝 Student Clubs            | 60+                   |
 
 ---
 
@@ -154,75 +154,80 @@ Full student account management with 4 tabs:
 
 ## 🛠 Tech Stack
 
-| Category | Technology |
-|---|---|
-| **Framework** | [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) |
-| **Build Tool** | [Vite 6](https://vitejs.dev/) with `@vitejs/plugin-react-swc` |
-| **Routing** | [React Router v7](https://reactrouter.com/) |
-| **UI Primitives** | [Radix UI](https://www.radix-ui.com/) (20+ primitives) |
-| **Charts** | [Recharts 2](https://recharts.org/) |
-| **Icons** | [Lucide React](https://lucide.dev/) |
-| **Styling** | Vanilla CSS (`index.css`) + utility classes |
-| **Theme** | [next-themes](https://github.com/pacocoursey/next-themes) |
-| **Forms** | [React Hook Form](https://react-hook-form.com/) |
-| **Notifications** | [Sonner](https://sonner.emilkowal.ski/) |
-| **Components** | `class-variance-authority`, `tailwind-merge`, `clsx` |
-| **Carousel** | [Embla Carousel](https://www.embla-carousel.com/) |
-| **Other** | `react-day-picker`, `vaul` (drawer), `cmdk` (command palette), `input-otp`, `react-resizable-panels` |
+| Category          | Technology                                                                                           |
+| ----------------- | ---------------------------------------------------------------------------------------------------- |
+| **Framework**     | [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)                       |
+| **Build Tool**    | [Vite 6](https://vitejs.dev/) with `@vitejs/plugin-react-swc`                                        |
+| **Routing**       | [React Router v7](https://reactrouter.com/)                                                          |
+| **UI Primitives** | [Radix UI](https://www.radix-ui.com/) (20+ primitives)                                               |
+| **Charts**        | [Recharts 2](https://recharts.org/)                                                                  |
+| **Icons**         | [Lucide React](https://lucide.dev/)                                                                  |
+| **Styling**       | Vanilla CSS (`index.css`) + utility classes                                                          |
+| **Theme**         | [next-themes](https://github.com/pacocoursey/next-themes)                                            |
+| **Forms**         | [React Hook Form](https://react-hook-form.com/)                                                      |
+| **Notifications** | [Sonner](https://sonner.emilkowal.ski/)                                                              |
+| **Components**    | `class-variance-authority`, `tailwind-merge`, `clsx`                                                 |
+| **Carousel**      | [Embla Carousel](https://www.embla-carousel.com/)                                                    |
+| **Other**         | `react-day-picker`, `vaul` (drawer), `cmdk` (command palette), `input-otp`, `react-resizable-panels` |
 
 ---
 
 ## 📁 Project Structure
 
 ```
-University_App_Dashboard/
-├── index.html                  # App entry point
-├── vite.config.ts              # Vite + path aliases config
+.
+├── index.html                       # App entry point
+├── vite.config.ts                   # Vite + Tailwind + path aliases
+├── tsconfig.json / tsconfig.node.json
 ├── package.json
+├── docs/                            # Guidelines, attributions
 └── src/
-    ├── main.tsx                # React DOM render
-    ├── App.tsx                 # Root RouterProvider
-    ├── routes.ts               # React Router route definitions
-    ├── index.css               # Global styles & design tokens
-    ├── styles/                 # Additional style modules
-    ├── guidelines/             # Design/content guidelines
+    ├── main.tsx                     # React DOM render
+    ├── App.tsx                      # Root RouterProvider
+    ├── index.css                    # Tailwind entry + design tokens
+    ├── styles/                      # Additional style modules
+    ├── app/
+    │   ├── Root.tsx                 # Layout shell (Navigation + Outlet + Footer)
+    │   └── routes.ts                # React Router route definitions
+    ├── pages/                       # One file per route
+    │   ├── HomePage.tsx             # Dashboard home
+    │   ├── AcademicsPage.tsx        # Programs, faculty, calendar, library
+    │   ├── AdmissionsPage.tsx       # Steps, requirements, aid, FAQ
+    │   ├── CampusLifePage.tsx       # Housing, dining, sports, wellness, clubs
+    │   ├── NotificationsPage.tsx    # Notifications centre
+    │   └── AccountPage.tsx          # Student account management
+    ├── features/
+    │   └── dashboard/               # Analytics widgets used on HomePage
+    │       ├── StatsCards.tsx       # KPI cards
+    │       ├── EnrollmentChart.tsx  # Recharts enrollment chart
+    │       ├── DepartmentBreakdown.tsx
+    │       ├── GradeDistribution.tsx
+    │       ├── CourseTable.tsx      # Course data table
+    │       └── RecentActivities.tsx # Activity feed
     └── components/
-        ├── Root.tsx            # Layout shell (Navigation + Outlet + Footer)
-        ├── Navigation.tsx      # Sticky top navbar with search, notifications, account
-        ├── Footer.tsx          # Site-wide footer with links and contact
-        ├── SearchOverlay.tsx   # Full-screen search modal
-        │
-        ├── HomePage.tsx        # Dashboard home page
-        ├── Hero.tsx            # Hero section component
-        ├── StatsCards.tsx      # KPI stats card grid
-        ├── EnrollmentChart.tsx # Recharts enrollment chart
-        ├── DepartmentBreakdown.tsx # Recharts department pie chart
-        ├── GradeDistribution.tsx   # Recharts grade bar chart
-        ├── CourseTable.tsx     # Course data table
-        ├── RecentActivities.tsx    # Activity feed
-        ├── QuickLinks.tsx      # Navigation quick links
-        ├── ContactSection.tsx  # Contact form & details
-        │
-        ├── AcademicsPage.tsx   # Academics page (programs, faculty, calendar, library)
-        ├── AdmissionsPage.tsx  # Admissions page (steps, requirements, aid, FAQ)
-        ├── CampusLifePage.tsx  # Campus life page (housing, dining, sports, wellness, clubs)
-        ├── NotificationsPage.tsx   # Notifications centre
-        ├── AccountPage.tsx     # Student account management
-        │
-        ├── 
-        │   └── ImageWithFallback.tsx  # Image component with graceful fallback
-        └── ui/                 # 48 Radix UI-based reusable UI components
+        ├── layout/                  # Site chrome
+        │   ├── Navigation.tsx       # Sticky top navbar
+        │   ├── Footer.tsx           # Site-wide footer
+        │   └── Hero.tsx             # Landing hero
+        ├── common/                  # Cross-page building blocks
+        │   ├── QuickLinks.tsx
+        │   ├── ContactSection.tsx
+        │   ├── SearchOverlay.tsx    # Full-screen search modal
+        │   └── ImageWithFallback.tsx
+        └── ui/                      # 48 shadcn/ui primitives (Radix-based)
             ├── button.tsx
             ├── card.tsx
-            ├── badge.tsx
-            ├── input.tsx
-            ├── label.tsx
             ├── dialog.tsx
-            ├── tabs.tsx
-            ├── accordion.tsx
-            ├── select.tsx
-            └── ...             # (and 38 more)
+            └── ...                  # 45 more — do not hand-edit
 ```
+
+### Where to put new code
+
+- **A new URL** → add a page in `src/pages/` and register it in `src/app/routes.ts`.
+- **A widget on one page** → put it next to that page or in `src/features/<feature>/`.
+- **A widget reused across pages** → `src/components/common/`.
+- **Site chrome** (nav, footer, hero) → `src/components/layout/`.
+- **A shadcn primitive** → generate it into `src/components/ui/`; do not hand-edit.
 
 ---
 
@@ -243,7 +248,10 @@ git clone https://github.com/your-username/University_App_Dashboard.git
 cd University_App_Dashboard
 
 # 3. Install dependencies
-npm i
+npm install
+
+# 4. Start the dev server
+npm run dev
 ```
 
 ### Development Server
@@ -266,14 +274,14 @@ The build output is placed in the `dist/` directory, ready for static hosting.
 
 ## 🗺 Available Routes
 
-| Route | Component | Description |
-|---|---|---|
-| `/` | `HomePage` | Dashboard with analytics, stats, and charts |
-| `/academics` | `AcademicsPage` | Programs, departments, faculty, calendar |
-| `/admissions` | `AdmissionsPage` | Application steps, requirements, deadlines, aid |
-| `/campus` | `CampusLifePage` | Housing, dining, athletics, wellness, clubs |
-| `/notifications` | `NotificationsPage` | Notification centre |
-| `/account` | `AccountPage` | Profile, security, notification preferences, privacy |
+| Route            | Component           | Description                                          |
+| ---------------- | ------------------- | ---------------------------------------------------- |
+| `/`              | `HomePage`          | Dashboard with analytics, stats, and charts          |
+| `/academics`     | `AcademicsPage`     | Programs, departments, faculty, calendar             |
+| `/admissions`    | `AdmissionsPage`    | Application steps, requirements, deadlines, aid      |
+| `/campus`        | `CampusLifePage`    | Housing, dining, athletics, wellness, clubs          |
+| `/notifications` | `NotificationsPage` | Notification centre                                  |
+| `/account`       | `AccountPage`       | Profile, security, notification preferences, privacy |
 
 > All routes are nested under the `Root` layout which renders the sticky `Navigation` and `Footer`.
 
@@ -282,7 +290,9 @@ The build output is placed in the `dist/` directory, ready for static hosting.
 ## 🧩 Key Components
 
 ### `Navigation`
+
 Sticky top navigation bar with:
+
 - University logo and branding
 - Desktop nav links with active-route highlighting
 - Search icon → opens `SearchOverlay`
@@ -292,12 +302,15 @@ Sticky top navigation bar with:
 - Responsive hamburger menu with full mobile drawer
 
 ### `SearchOverlay`
+
 Full-screen modal search experience triggered from the navigation bar.
 
 ### `EnrollmentChart` / `DepartmentBreakdown` / `GradeDistribution`
+
 Recharts-powered interactive visualisations rendered on the home dashboard.
 
 ### `ImageWithFallback`
+
 Graceful image loading wrapper that falls back to a styled placeholder if the source fails to load — used across all hero sections and photo galleries.
 
 ---
@@ -306,15 +319,15 @@ Graceful image loading wrapper that falls back to a styled placeholder if the so
 
 The `src/components/ui/` directory contains **48 fully accessible, Radix UI-based components** covering:
 
-| Category | Components |
-|---|---|
-| **Layout** | `card`, `separator`, `resizable`, `scroll-area`, `aspect-ratio` |
-| **Navigation** | `navigation-menu`, `menubar`, `breadcrumb`, `tabs`, `pagination` |
-| **Forms** | `button`, `input`, `label`, `checkbox`, `radio-group`, `select`, `slider`, `switch`, `toggle`, `toggle-group`, `textarea`, `form`, `input-otp` |
-| **Overlay** | `dialog`, `alert-dialog`, `sheet`, `drawer`, `popover`, `tooltip`, `hover-card`, `context-menu`, `dropdown-menu` |
-| **Feedback** | `badge`, `progress`, `sonner`, `skeleton`, `alert` |
-| **Data Display** | `table`, `accordion`, `collapsible`, `avatar`, `calendar`, `chart` |
-| **Utility** | `command`, `carousel`, `sidebar` |
+| Category         | Components                                                                                                                                     |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Layout**       | `card`, `separator`, `resizable`, `scroll-area`, `aspect-ratio`                                                                                |
+| **Navigation**   | `navigation-menu`, `menubar`, `breadcrumb`, `tabs`, `pagination`                                                                               |
+| **Forms**        | `button`, `input`, `label`, `checkbox`, `radio-group`, `select`, `slider`, `switch`, `toggle`, `toggle-group`, `textarea`, `form`, `input-otp` |
+| **Overlay**      | `dialog`, `alert-dialog`, `sheet`, `drawer`, `popover`, `tooltip`, `hover-card`, `context-menu`, `dropdown-menu`                               |
+| **Feedback**     | `badge`, `progress`, `sonner`, `skeleton`, `alert`                                                                                             |
+| **Data Display** | `table`, `accordion`, `collapsible`, `avatar`, `calendar`, `chart`                                                                             |
+| **Utility**      | `command`, `carousel`, `sidebar`                                                                                                               |
 
 All components are built with `class-variance-authority` for consistent variant management.
 
