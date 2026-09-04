@@ -175,54 +175,59 @@ Full student account management with 4 tabs:
 ## 📁 Project Structure
 
 ```
-University_App_Dashboard/
-├── index.html                  # App entry point
-├── vite.config.ts              # Vite + path aliases config
+.
+├── index.html                       # App entry point
+├── vite.config.ts                   # Vite + Tailwind + path aliases
+├── tsconfig.json / tsconfig.node.json
 ├── package.json
+├── docs/                            # Guidelines, attributions
 └── src/
-    ├── main.tsx                # React DOM render
-    ├── App.tsx                 # Root RouterProvider
-    ├── routes.ts               # React Router route definitions
-    ├── index.css               # Global styles & design tokens
-    ├── styles/                 # Additional style modules
-    ├── guidelines/             # Design/content guidelines
+    ├── main.tsx                     # React DOM render
+    ├── App.tsx                      # Root RouterProvider
+    ├── index.css                    # Tailwind entry + design tokens
+    ├── styles/                      # Additional style modules
+    ├── app/
+    │   ├── Root.tsx                 # Layout shell (Navigation + Outlet + Footer)
+    │   └── routes.ts                # React Router route definitions
+    ├── pages/                       # One file per route
+    │   ├── HomePage.tsx             # Dashboard home
+    │   ├── AcademicsPage.tsx        # Programs, faculty, calendar, library
+    │   ├── AdmissionsPage.tsx       # Steps, requirements, aid, FAQ
+    │   ├── CampusLifePage.tsx       # Housing, dining, sports, wellness, clubs
+    │   ├── NotificationsPage.tsx    # Notifications centre
+    │   └── AccountPage.tsx          # Student account management
+    ├── features/
+    │   └── dashboard/               # Analytics widgets used on HomePage
+    │       ├── StatsCards.tsx       # KPI cards
+    │       ├── EnrollmentChart.tsx  # Recharts enrollment chart
+    │       ├── DepartmentBreakdown.tsx
+    │       ├── GradeDistribution.tsx
+    │       ├── CourseTable.tsx      # Course data table
+    │       └── RecentActivities.tsx # Activity feed
     └── components/
-        ├── Root.tsx            # Layout shell (Navigation + Outlet + Footer)
-        ├── Navigation.tsx      # Sticky top navbar with search, notifications, account
-        ├── Footer.tsx          # Site-wide footer with links and contact
-        ├── SearchOverlay.tsx   # Full-screen search modal
-        │
-        ├── HomePage.tsx        # Dashboard home page
-        ├── Hero.tsx            # Hero section component
-        ├── StatsCards.tsx      # KPI stats card grid
-        ├── EnrollmentChart.tsx # Recharts enrollment chart
-        ├── DepartmentBreakdown.tsx # Recharts department pie chart
-        ├── GradeDistribution.tsx   # Recharts grade bar chart
-        ├── CourseTable.tsx     # Course data table
-        ├── RecentActivities.tsx    # Activity feed
-        ├── QuickLinks.tsx      # Navigation quick links
-        ├── ContactSection.tsx  # Contact form & details
-        │
-        ├── AcademicsPage.tsx   # Academics page (programs, faculty, calendar, library)
-        ├── AdmissionsPage.tsx  # Admissions page (steps, requirements, aid, FAQ)
-        ├── CampusLifePage.tsx  # Campus life page (housing, dining, sports, wellness, clubs)
-        ├── NotificationsPage.tsx   # Notifications centre
-        ├── AccountPage.tsx     # Student account management
-        │
-        ├── 
-        │   └── ImageWithFallback.tsx  # Image component with graceful fallback
-        └── ui/                 # 48 Radix UI-based reusable UI components
+        ├── layout/                  # Site chrome
+        │   ├── Navigation.tsx       # Sticky top navbar
+        │   ├── Footer.tsx           # Site-wide footer
+        │   └── Hero.tsx             # Landing hero
+        ├── common/                  # Cross-page building blocks
+        │   ├── QuickLinks.tsx
+        │   ├── ContactSection.tsx
+        │   ├── SearchOverlay.tsx    # Full-screen search modal
+        │   └── ImageWithFallback.tsx
+        └── ui/                      # 48 shadcn/ui primitives (Radix-based)
             ├── button.tsx
             ├── card.tsx
-            ├── badge.tsx
-            ├── input.tsx
-            ├── label.tsx
             ├── dialog.tsx
-            ├── tabs.tsx
-            ├── accordion.tsx
-            ├── select.tsx
-            └── ...             # (and 38 more)
+            └── ...                  # 45 more — do not hand-edit
 ```
+
+### Where to put new code
+
+- **A new URL** → add a page in `src/pages/` and register it in `src/app/routes.ts`.
+- **A widget on one page** → put it next to that page or in `src/features/<feature>/`.
+- **A widget reused across pages** → `src/components/common/`.
+- **Site chrome** (nav, footer, hero) → `src/components/layout/`.
+- **A shadcn primitive** → generate it into `src/components/ui/`; do not hand-edit.
 
 ---
 
@@ -243,7 +248,10 @@ git clone https://github.com/your-username/University_App_Dashboard.git
 cd University_App_Dashboard
 
 # 3. Install dependencies
-npm i
+npm install
+
+# 4. Start the dev server
+npm run dev
 ```
 
 ### Development Server
