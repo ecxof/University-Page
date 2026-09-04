@@ -32,22 +32,46 @@ const tabs: { key: Tab; label: string; icon: React.ElementType }[] = [
 ];
 
 const notifOptions = [
-  { id: "grade", label: "Grade Updates", desc: "When grades are posted or updated", defaultOn: true },
-  { id: "enrollment", label: "Enrollment Alerts", desc: "Registration opens, deadlines, and changes", defaultOn: true },
-  { id: "payment", label: "Payment Reminders", desc: "Tuition due dates and payment confirmations", defaultOn: true },
-  { id: "events", label: "Campus Events", desc: "Upcoming events and activities", defaultOn: false },
+  {
+    id: "grade",
+    label: "Grade Updates",
+    desc: "When grades are posted or updated",
+    defaultOn: true,
+  },
+  {
+    id: "enrollment",
+    label: "Enrollment Alerts",
+    desc: "Registration opens, deadlines, and changes",
+    defaultOn: true,
+  },
+  {
+    id: "payment",
+    label: "Payment Reminders",
+    desc: "Tuition due dates and payment confirmations",
+    defaultOn: true,
+  },
+  {
+    id: "events",
+    label: "Campus Events",
+    desc: "Upcoming events and activities",
+    defaultOn: false,
+  },
   { id: "news", label: "University News", desc: "Newsletters and announcements", defaultOn: false },
-  { id: "career", label: "Career Services", desc: "Job fairs, internship opportunities", defaultOn: true },
-  { id: "system", label: "System Alerts", desc: "Portal maintenance and system updates", defaultOn: true },
+  {
+    id: "career",
+    label: "Career Services",
+    desc: "Job fairs, internship opportunities",
+    defaultOn: true,
+  },
+  {
+    id: "system",
+    label: "System Alerts",
+    desc: "Portal maintenance and system updates",
+    defaultOn: true,
+  },
 ];
 
-function Toggle({
-  on,
-  onChange,
-}: {
-  on: boolean;
-  onChange: (v: boolean) => void;
-}) {
+function Toggle({ on, onChange }: { on: boolean; onChange: (v: boolean) => void }) {
   return (
     <button
       type="button"
@@ -86,7 +110,7 @@ export function AccountPage() {
   });
 
   const [notifSettings, setNotifSettings] = useState<Record<string, boolean>>(
-    Object.fromEntries(notifOptions.map((n) => [n.id, n.defaultOn]))
+    Object.fromEntries(notifOptions.map((n) => [n.id, n.defaultOn])),
   );
 
   const handleProfileSave = () => {
@@ -179,9 +203,7 @@ export function AccountPage() {
                 <div className="flex items-center justify-between mb-6">
                   <div>
                     <h3 className="text-slate-900">Personal Information</h3>
-                    <p className="text-slate-500 text-sm">
-                      Manage your profile details
-                    </p>
+                    <p className="text-slate-500 text-sm">Manage your profile details</p>
                   </div>
                   {!editingProfile ? (
                     <Button
@@ -195,11 +217,7 @@ export function AccountPage() {
                     </Button>
                   ) : (
                     <div className="flex gap-2">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => setEditingProfile(false)}
-                      >
+                      <Button variant="outline" size="sm" onClick={() => setEditingProfile(false)}>
                         Cancel
                       </Button>
                       <Button
@@ -356,9 +374,7 @@ export function AccountPage() {
                         Add an extra layer of security using an authenticator app or SMS.
                       </p>
                     </div>
-                    <Badge className="bg-slate-100 text-slate-500 border-slate-200">
-                      Disabled
-                    </Badge>
+                    <Badge className="bg-slate-100 text-slate-500 border-slate-200">Disabled</Badge>
                   </div>
                   <Button variant="outline" className="mt-4">
                     Enable 2FA
@@ -372,9 +388,24 @@ export function AccountPage() {
                   <h3 className="text-slate-900 mb-4">Active Sessions</h3>
                   <div className="space-y-3">
                     {[
-                      { device: "Chrome on Windows 11", location: "State City, ST", time: "Now (current session)", active: true },
-                      { device: "Safari on iPhone 15", location: "State City, ST", time: "2 hours ago", active: false },
-                      { device: "Firefox on macOS", location: "Campus Library", time: "Yesterday", active: false },
+                      {
+                        device: "Chrome on Windows 11",
+                        location: "State City, ST",
+                        time: "Now (current session)",
+                        active: true,
+                      },
+                      {
+                        device: "Safari on iPhone 15",
+                        location: "State City, ST",
+                        time: "2 hours ago",
+                        active: false,
+                      },
+                      {
+                        device: "Firefox on macOS",
+                        location: "Campus Library",
+                        time: "Yesterday",
+                        active: false,
+                      },
                     ].map((session) => (
                       <div
                         key={session.device}
@@ -391,7 +422,11 @@ export function AccountPage() {
                             Current
                           </Badge>
                         ) : (
-                          <Button variant="ghost" size="sm" className="text-red-500 hover:text-red-700 text-xs">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="text-red-500 hover:text-red-700 text-xs"
+                          >
                             Revoke
                           </Button>
                         )}
@@ -416,9 +451,7 @@ export function AccountPage() {
                     <div
                       key={opt.id}
                       className={`flex items-center justify-between py-4 ${
-                        idx !== notifOptions.length - 1
-                          ? "border-b border-slate-100"
-                          : ""
+                        idx !== notifOptions.length - 1 ? "border-b border-slate-100" : ""
                       }`}
                     >
                       <div>
@@ -427,9 +460,7 @@ export function AccountPage() {
                       </div>
                       <Toggle
                         on={notifSettings[opt.id]}
-                        onChange={(v) =>
-                          setNotifSettings((prev) => ({ ...prev, [opt.id]: v }))
-                        }
+                        onChange={(v) => setNotifSettings((prev) => ({ ...prev, [opt.id]: v }))}
                       />
                     </div>
                   ))}
@@ -437,9 +468,7 @@ export function AccountPage() {
 
                 {/* Delivery methods */}
                 <div className="mt-6 pt-6 border-t border-slate-100">
-                  <p className="text-slate-700 text-sm font-medium mb-4">
-                    Delivery Method
-                  </p>
+                  <p className="text-slate-700 text-sm font-medium mb-4">Delivery Method</p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {[
                       { label: "In-App", icon: Bell, enabled: true },

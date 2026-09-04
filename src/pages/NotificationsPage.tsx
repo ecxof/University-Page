@@ -63,7 +63,8 @@ const initialNotifications: Notification[] = [
     iconColor: "text-purple-600",
     iconBg: "bg-purple-50",
     title: "Career Fair – February 20",
-    description: "The Annual Spring Career Fair is scheduled for February 20. Over 80 companies attending.",
+    description:
+      "The Annual Spring Career Fair is scheduled for February 20. Over 80 companies attending.",
     time: "3 hours ago",
     read: false,
   },
@@ -85,7 +86,8 @@ const initialNotifications: Notification[] = [
     iconColor: "text-red-600",
     iconBg: "bg-red-50",
     title: "System Maintenance Scheduled",
-    description: "The student portal will be unavailable on Sunday, Nov 3 from 2–4 AM for scheduled maintenance.",
+    description:
+      "The student portal will be unavailable on Sunday, Nov 3 from 2–4 AM for scheduled maintenance.",
     time: "2 days ago",
     read: true,
   },
@@ -96,7 +98,8 @@ const initialNotifications: Notification[] = [
     iconColor: "text-indigo-600",
     iconBg: "bg-indigo-50",
     title: "Campus Town Hall – Save the Date",
-    description: "President Williams invites all students to the Fall Town Hall on November 10 at 4 PM.",
+    description:
+      "President Williams invites all students to the Fall Town Hall on November 10 at 4 PM.",
     time: "3 days ago",
     read: true,
   },
@@ -107,7 +110,8 @@ const initialNotifications: Notification[] = [
     iconColor: "text-blue-600",
     iconBg: "bg-blue-50",
     title: "Midterm Results – CS 201",
-    description: "Your midterm exam results for Introduction to Computer Science are now available.",
+    description:
+      "Your midterm exam results for Introduction to Computer Science are now available.",
     time: "4 days ago",
     read: true,
   },
@@ -118,7 +122,8 @@ const initialNotifications: Notification[] = [
     iconColor: "text-orange-600",
     iconBg: "bg-orange-50",
     title: "Scholarship Award Confirmed",
-    description: "Congratulations! Your Merit Excellence Scholarship of $2,000 has been applied to your account.",
+    description:
+      "Congratulations! Your Merit Excellence Scholarship of $2,000 has been applied to your account.",
     time: "1 week ago",
     read: true,
   },
@@ -141,16 +146,12 @@ export function NotificationsPage() {
 
   const unreadCount = notifications.filter((n) => !n.read).length;
 
-  const markAllRead = () =>
-    setNotifications((prev) => prev.map((n) => ({ ...n, read: true })));
+  const markAllRead = () => setNotifications((prev) => prev.map((n) => ({ ...n, read: true })));
 
   const markRead = (id: number) =>
-    setNotifications((prev) =>
-      prev.map((n) => (n.id === id ? { ...n, read: true } : n))
-    );
+    setNotifications((prev) => prev.map((n) => (n.id === id ? { ...n, read: true } : n)));
 
-  const deleteNotif = (id: number) =>
-    setNotifications((prev) => prev.filter((n) => n.id !== id));
+  const deleteNotif = (id: number) => setNotifications((prev) => prev.filter((n) => n.id !== id));
 
   return (
     <main className="max-w-4xl mx-auto px-6 py-10">
@@ -164,8 +165,7 @@ export function NotificationsPage() {
             <h1 className="text-slate-900">Notifications</h1>
             {unreadCount > 0 ? (
               <p className="text-slate-500 text-sm">
-                You have{" "}
-                <span className="text-blue-600 font-medium">{unreadCount} unread</span>{" "}
+                You have <span className="text-blue-600 font-medium">{unreadCount} unread</span>{" "}
                 notification{unreadCount !== 1 ? "s" : ""}
               </p>
             ) : (
@@ -207,9 +207,7 @@ export function NotificationsPage() {
               {count > 0 && (
                 <span
                   className={`text-xs px-1.5 py-0.5 rounded-full ${
-                    active === tab.key
-                      ? "bg-white/20 text-white"
-                      : "bg-blue-50 text-blue-600"
+                    active === tab.key ? "bg-white/20 text-white" : "bg-blue-50 text-blue-600"
                   }`}
                 >
                   {count}
@@ -258,9 +256,7 @@ export function NotificationsPage() {
                             Urgent
                           </Badge>
                         )}
-                        {!notif.read && (
-                          <span className="w-2 h-2 bg-blue-500 rounded-full" />
-                        )}
+                        {!notif.read && <span className="w-2 h-2 bg-blue-500 rounded-full" />}
                       </div>
                       <span className="text-xs text-slate-400 whitespace-nowrap shrink-0">
                         {notif.time}
@@ -306,9 +302,7 @@ export function NotificationsPage() {
             <Bell className="w-5 h-5 text-slate-400" />
             <div>
               <p className="text-slate-700 text-sm">Notification Preferences</p>
-              <p className="text-slate-400 text-xs">
-                Control which notifications you receive
-              </p>
+              <p className="text-slate-400 text-xs">Control which notifications you receive</p>
             </div>
           </div>
           <Button variant="outline" size="sm" asChild>

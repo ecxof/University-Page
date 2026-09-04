@@ -79,9 +79,7 @@ export function CourseTable() {
                   {course.enrolled}/{course.capacity}
                 </TableCell>
                 <TableCell>
-                  <Badge
-                    variant={course.status === "Open" ? "default" : "secondary"}
-                  >
+                  <Badge variant={course.status === "Open" ? "default" : "secondary"}>
                     {course.status}
                   </Badge>
                 </TableCell>

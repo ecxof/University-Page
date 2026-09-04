@@ -50,12 +50,11 @@ export function QuickLinks() {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
       {quickLinks.map((link) => (
-        <Card
-          key={link.title}
-          className="hover:shadow-lg transition-shadow cursor-pointer"
-        >
+        <Card key={link.title} className="hover:shadow-lg transition-shadow cursor-pointer">
           <CardContent className="p-6 text-center">
-            <div className={`${link.bgColor} ${link.color} w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3`}>
+            <div
+              className={`${link.bgColor} ${link.color} w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3`}
+            >
               <link.icon className="w-6 h-6" />
             </div>
             <h4 className="text-slate-900 text-sm mb-1">{link.title}</h4>

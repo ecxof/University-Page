@@ -71,9 +71,27 @@ const housingAmenities = [
 ];
 
 const diningPlans = [
-  { name: "Basic Plan", meals: "10 meals/week", dining_dollars: "$100", price: "$2,100/semester", popular: false },
-  { name: "Standard Plan", meals: "15 meals/week", dining_dollars: "$200", price: "$2,600/semester", popular: true },
-  { name: "Premium Plan", meals: "Unlimited", dining_dollars: "$300", price: "$3,000/semester", popular: false },
+  {
+    name: "Basic Plan",
+    meals: "10 meals/week",
+    dining_dollars: "$100",
+    price: "$2,100/semester",
+    popular: false,
+  },
+  {
+    name: "Standard Plan",
+    meals: "15 meals/week",
+    dining_dollars: "$200",
+    price: "$2,600/semester",
+    popular: true,
+  },
+  {
+    name: "Premium Plan",
+    meals: "Unlimited",
+    dining_dollars: "$300",
+    price: "$3,000/semester",
+    popular: false,
+  },
 ];
 
 const diningLocations = [
@@ -84,19 +102,68 @@ const diningLocations = [
 ];
 
 const sports = [
-  { name: "Basketball", division: "NCAA Division I", facility: "Anderson Arena (8,000 capacity)", icon: Trophy },
-  { name: "Soccer", division: "NCAA Division I", facility: "State Field (4,500 capacity)", icon: Trophy },
-  { name: "Swimming", division: "NCAA Division II", facility: "Aquatics Centre (Olympic pool)", icon: Trophy },
-  { name: "Track & Field", division: "NCAA Division I", facility: "Stadium Track (400m)", icon: Trophy },
+  {
+    name: "Basketball",
+    division: "NCAA Division I",
+    facility: "Anderson Arena (8,000 capacity)",
+    icon: Trophy,
+  },
+  {
+    name: "Soccer",
+    division: "NCAA Division I",
+    facility: "State Field (4,500 capacity)",
+    icon: Trophy,
+  },
+  {
+    name: "Swimming",
+    division: "NCAA Division II",
+    facility: "Aquatics Centre (Olympic pool)",
+    icon: Trophy,
+  },
+  {
+    name: "Track & Field",
+    division: "NCAA Division I",
+    facility: "Stadium Track (400m)",
+    icon: Trophy,
+  },
   { name: "Tennis", division: "NCAA Division II", facility: "12 outdoor courts", icon: Trophy },
-  { name: "Volleyball", division: "NCAA Division I", facility: "Sports Complex Court", icon: Trophy },
+  {
+    name: "Volleyball",
+    division: "NCAA Division I",
+    facility: "Sports Complex Court",
+    icon: Trophy,
+  },
 ];
 
 const wellnessServices = [
-  { icon: Heart, title: "Health Centre", desc: "On-campus medical clinic staffed by nurses and a resident physician. Free consultations for enrolled students.", color: "text-red-600", bg: "bg-red-50" },
-  { icon: Users, title: "Counselling Services", desc: "Confidential mental health support including individual therapy, group sessions, and crisis intervention.", color: "text-blue-600", bg: "bg-blue-50" },
-  { icon: Dumbbell, title: "Recreation & Fitness", desc: "State-of-the-art gym, yoga studio, rock climbing wall, and intramural sports leagues open to all students.", color: "text-emerald-600", bg: "bg-emerald-50" },
-  { icon: Leaf, title: "Mindfulness Centre", desc: "Quiet meditation rooms, wellness workshops, stress management programs, and sleep health resources.", color: "text-teal-600", bg: "bg-teal-50" },
+  {
+    icon: Heart,
+    title: "Health Centre",
+    desc: "On-campus medical clinic staffed by nurses and a resident physician. Free consultations for enrolled students.",
+    color: "text-red-600",
+    bg: "bg-red-50",
+  },
+  {
+    icon: Users,
+    title: "Counselling Services",
+    desc: "Confidential mental health support including individual therapy, group sessions, and crisis intervention.",
+    color: "text-blue-600",
+    bg: "bg-blue-50",
+  },
+  {
+    icon: Dumbbell,
+    title: "Recreation & Fitness",
+    desc: "State-of-the-art gym, yoga studio, rock climbing wall, and intramural sports leagues open to all students.",
+    color: "text-emerald-600",
+    bg: "bg-emerald-50",
+  },
+  {
+    icon: Leaf,
+    title: "Mindfulness Centre",
+    desc: "Quiet meditation rooms, wellness workshops, stress management programs, and sleep health resources.",
+    color: "text-teal-600",
+    bg: "bg-teal-50",
+  },
 ];
 
 const clubs = [
@@ -111,12 +178,42 @@ const clubs = [
 ];
 
 const upcomingEvents = [
-  { title: "Spring Music Festival", date: "March 8, 2026", location: "Main Quad", category: "Culture" },
-  { title: "Intramural Basketball Finals", date: "March 14, 2026", location: "Anderson Arena", category: "Sports" },
-  { title: "International Food Fair", date: "March 21, 2026", location: "Campus Centre", category: "Food" },
-  { title: "Mental Health Awareness Week", date: "April 1–5, 2026", location: "Wellness Hub", category: "Wellness" },
-  { title: "Spring Formal Dance", date: "April 12, 2026", location: "Grand Ballroom", category: "Social" },
-  { title: "Earth Day Campus Clean-up", date: "April 22, 2026", location: "Campus-wide", category: "Environment" },
+  {
+    title: "Spring Music Festival",
+    date: "March 8, 2026",
+    location: "Main Quad",
+    category: "Culture",
+  },
+  {
+    title: "Intramural Basketball Finals",
+    date: "March 14, 2026",
+    location: "Anderson Arena",
+    category: "Sports",
+  },
+  {
+    title: "International Food Fair",
+    date: "March 21, 2026",
+    location: "Campus Centre",
+    category: "Food",
+  },
+  {
+    title: "Mental Health Awareness Week",
+    date: "April 1–5, 2026",
+    location: "Wellness Hub",
+    category: "Wellness",
+  },
+  {
+    title: "Spring Formal Dance",
+    date: "April 12, 2026",
+    location: "Grand Ballroom",
+    category: "Social",
+  },
+  {
+    title: "Earth Day Campus Clean-up",
+    date: "April 22, 2026",
+    location: "Campus-wide",
+    category: "Environment",
+  },
 ];
 
 const categoryColors: Record<string, string> = {
@@ -145,7 +242,9 @@ export function CampusLifePage() {
         <div className="relative max-w-7xl mx-auto px-6 py-24">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4">
-              <a href="/" className="text-emerald-300 hover:text-white text-sm transition-colors">Home</a>
+              <a href="/" className="text-emerald-300 hover:text-white text-sm transition-colors">
+                Home
+              </a>
               <ChevronRight className="w-4 h-4 text-emerald-400" />
               <span className="text-white text-sm">Campus Life</span>
             </div>
@@ -154,14 +253,18 @@ export function CampusLifePage() {
             </span>
             <h1 className="text-white text-5xl mb-5">Life Beyond the Classroom</h1>
             <p className="text-emerald-100 text-xl mb-8 leading-relaxed">
-              University is more than academics. Discover a thriving community of clubs,
-              events, sports, and experiences that will shape who you become.
+              University is more than academics. Discover a thriving community of clubs, events,
+              sports, and experiences that will shape who you become.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-white text-emerald-700 hover:bg-emerald-50">
                 Explore Campus <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white/40 text-white hover:bg-white/10"
+              >
                 Find Your Club
               </Button>
             </div>
@@ -187,7 +290,6 @@ export function CampusLifePage() {
       </div>
 
       <main className="max-w-7xl mx-auto px-6 py-16 space-y-20">
-
         {/* Housing / Dining / Athletics / Wellness Tabs */}
         <section>
           <div className="text-center mb-8">
@@ -239,13 +341,17 @@ export function CampusLifePage() {
                           </li>
                         ))}
                       </ul>
-                      <Button variant="outline" className="w-full text-sm">Learn More</Button>
+                      <Button variant="outline" className="w-full text-sm">
+                        Learn More
+                      </Button>
                     </CardContent>
                   </Card>
                 ))}
               </div>
               <div className="bg-slate-50 rounded-2xl p-6">
-                <p className="text-slate-700 text-sm font-medium mb-4">Included in All Residences</p>
+                <p className="text-slate-700 text-sm font-medium mb-4">
+                  Included in All Residences
+                </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {housingAmenities.map((a) => (
                     <div key={a.label} className="flex items-center gap-2">
@@ -270,10 +376,15 @@ export function CampusLifePage() {
             <div className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {diningPlans.map((plan) => (
-                  <Card key={plan.name} className={`hover:shadow-lg transition-shadow ${plan.popular ? "border-2 border-emerald-400" : ""}`}>
+                  <Card
+                    key={plan.name}
+                    className={`hover:shadow-lg transition-shadow ${plan.popular ? "border-2 border-emerald-400" : ""}`}
+                  >
                     <CardContent className="p-6">
                       {plan.popular && (
-                        <Badge className="bg-emerald-50 text-emerald-600 border-emerald-100 text-xs mb-3">Most Popular</Badge>
+                        <Badge className="bg-emerald-50 text-emerald-600 border-emerald-100 text-xs mb-3">
+                          Most Popular
+                        </Badge>
                       )}
                       <h3 className="text-slate-900 mb-4">{plan.name}</h3>
                       <div className="space-y-3 mb-5">
@@ -304,13 +415,18 @@ export function CampusLifePage() {
                 <h3 className="text-slate-900 mb-4">Dining Locations</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {diningLocations.map((loc) => (
-                    <div key={loc.name} className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:shadow-sm transition-shadow">
+                    <div
+                      key={loc.name}
+                      className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:shadow-sm transition-shadow"
+                    >
                       <div className="bg-orange-50 w-10 h-10 rounded-xl flex items-center justify-center shrink-0">
                         <loc.icon className="w-5 h-5 text-orange-600" />
                       </div>
                       <div>
                         <p className="text-slate-800 text-sm">{loc.name}</p>
-                        <p className="text-slate-400 text-xs">{loc.type} · {loc.hours}</p>
+                        <p className="text-slate-400 text-xs">
+                          {loc.type} · {loc.hours}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -327,7 +443,10 @@ export function CampusLifePage() {
                   <h3 className="text-slate-900 mb-4">Varsity Sports Programs</h3>
                   <div className="space-y-3">
                     {sports.map((sport) => (
-                      <div key={sport.name} className="flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:shadow-sm transition-shadow">
+                      <div
+                        key={sport.name}
+                        className="flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:shadow-sm transition-shadow"
+                      >
                         <div className="bg-blue-50 w-10 h-10 rounded-xl flex items-center justify-center shrink-0">
                           <sport.icon className="w-5 h-5 text-blue-600" />
                         </div>
@@ -354,8 +473,8 @@ export function CampusLifePage() {
                     <CardContent className="p-6">
                       <h4 className="text-slate-900 mb-3">Intramural Sports</h4>
                       <p className="text-slate-500 text-sm mb-4 leading-relaxed">
-                        Not going varsity? No problem. Our intramural leagues welcome all skill levels
-                        across basketball, flag football, volleyball, badminton, and more.
+                        Not going varsity? No problem. Our intramural leagues welcome all skill
+                        levels across basketball, flag football, volleyball, badminton, and more.
                       </p>
                       <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">
                         Join Intramurals
@@ -374,12 +493,16 @@ export function CampusLifePage() {
                 {wellnessServices.map((ws) => (
                   <Card key={ws.title} className="hover:shadow-lg transition-shadow">
                     <CardContent className="p-6">
-                      <div className={`${ws.bg} ${ws.color} w-12 h-12 rounded-xl flex items-center justify-center mb-4`}>
+                      <div
+                        className={`${ws.bg} ${ws.color} w-12 h-12 rounded-xl flex items-center justify-center mb-4`}
+                      >
                         <ws.icon className="w-6 h-6" />
                       </div>
                       <h3 className="text-slate-900 mb-2">{ws.title}</h3>
                       <p className="text-slate-500 text-sm leading-relaxed">{ws.desc}</p>
-                      <button className={`mt-4 text-sm ${ws.color} flex items-center gap-1 hover:gap-2 transition-all`}>
+                      <button
+                        className={`mt-4 text-sm ${ws.color} flex items-center gap-1 hover:gap-2 transition-all`}
+                      >
                         Learn More <ChevronRight className="w-4 h-4" />
                       </button>
                     </CardContent>
@@ -390,12 +513,14 @@ export function CampusLifePage() {
                 <div className="flex-1">
                   <h3 className="text-slate-900 mb-2">Need to Talk to Someone?</h3>
                   <p className="text-slate-500 text-sm leading-relaxed">
-                    Our counselling services team is available 24/7 for crisis support.
-                    All sessions are completely confidential.
+                    Our counselling services team is available 24/7 for crisis support. All sessions
+                    are completely confidential.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-                  <Button className="bg-teal-600 hover:bg-teal-700 text-white">Book Appointment</Button>
+                  <Button className="bg-teal-600 hover:bg-teal-700 text-white">
+                    Book Appointment
+                  </Button>
                   <Button variant="outline">Crisis Hotline</Button>
                 </div>
               </div>
@@ -416,13 +541,18 @@ export function CampusLifePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {clubs.map((club) => (
-              <Card key={club.name} className="hover:shadow-md transition-shadow cursor-pointer group">
+              <Card
+                key={club.name}
+                className="hover:shadow-md transition-shadow cursor-pointer group"
+              >
                 <CardContent className="p-5">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="bg-slate-100 w-10 h-10 rounded-xl flex items-center justify-center shrink-0">
                       <club.icon className="w-5 h-5 text-slate-600" />
                     </div>
-                    <Badge className="bg-slate-50 text-slate-500 border-slate-200 text-xs">{club.category}</Badge>
+                    <Badge className="bg-slate-50 text-slate-500 border-slate-200 text-xs">
+                      {club.category}
+                    </Badge>
                   </div>
                   <h4 className="text-slate-900 text-sm mb-1">{club.name}</h4>
                   <p className="text-slate-400 text-xs flex items-center gap-1">
@@ -450,9 +580,14 @@ export function CampusLifePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {upcomingEvents.map((event) => (
-              <Card key={event.title} className="hover:shadow-md transition-shadow cursor-pointer group">
+              <Card
+                key={event.title}
+                className="hover:shadow-md transition-shadow cursor-pointer group"
+              >
                 <CardContent className="p-5">
-                  <Badge className={`text-xs border mb-3 ${categoryColors[event.category] ?? "bg-slate-50 text-slate-500"}`}>
+                  <Badge
+                    className={`text-xs border mb-3 ${categoryColors[event.category] ?? "bg-slate-50 text-slate-500"}`}
+                  >
                     {event.category}
                   </Badge>
                   <h4 className="text-slate-900 text-sm mb-3">{event.title}</h4>
@@ -516,20 +651,23 @@ export function CampusLifePage() {
           <Users className="w-12 h-12 mx-auto mb-4 text-emerald-200" />
           <h2 className="text-white mb-3">Become Part of Our Community</h2>
           <p className="text-emerald-100 mb-6 max-w-xl mx-auto">
-            From the moment you arrive, you'll be part of a supportive, diverse, and vibrant campus community.
-            Your best years start here.
+            From the moment you arrive, you'll be part of a supportive, diverse, and vibrant campus
+            community. Your best years start here.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button size="lg" className="bg-white text-emerald-700 hover:bg-emerald-50">
               Apply for Housing <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button size="lg" variant="outline" className="bg-transparent border-white/40 text-white hover:bg-white/10">
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-transparent border-white/40 text-white hover:bg-white/10"
+            >
               <Clock className="mr-2 w-4 h-4" />
               Schedule a Campus Tour
             </Button>
           </div>
         </section>
-
       </main>
     </div>
   );

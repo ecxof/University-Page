@@ -12,12 +12,10 @@ export function Hero() {
             <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
               <span className="text-sm">🎓 Ranked #1 Public University in the Region</span>
             </div>
-            <h1 className="text-white text-5xl lg:text-6xl mb-6">
-              Empowering Future Leaders
-            </h1>
+            <h1 className="text-white text-5xl lg:text-6xl mb-6">Empowering Future Leaders</h1>
             <p className="text-blue-100 text-xl mb-8">
-              Join 12,000+ students pursuing excellence across 50+ programs.
-              Transform your future with world-class education and cutting-edge research.
+              Join 12,000+ students pursuing excellence across 50+ programs. Transform your future
+              with world-class education and cutting-edge research.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-white text-blue-600 hover:bg-slate-100">

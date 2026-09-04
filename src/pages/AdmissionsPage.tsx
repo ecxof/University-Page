@@ -157,7 +157,9 @@ export function AdmissionsPage() {
         <div className="relative max-w-7xl mx-auto px-6 py-24">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4">
-              <a href="/" className="text-purple-300 hover:text-white text-sm transition-colors">Home</a>
+              <a href="/" className="text-purple-300 hover:text-white text-sm transition-colors">
+                Home
+              </a>
               <ChevronRight className="w-4 h-4 text-purple-400" />
               <span className="text-white text-sm">Admissions</span>
             </div>
@@ -166,14 +168,18 @@ export function AdmissionsPage() {
             </span>
             <h1 className="text-white text-5xl mb-5">Your Journey Starts Here</h1>
             <p className="text-purple-100 text-xl mb-8 leading-relaxed">
-              Join a vibrant community of scholars, innovators, and changemakers.
-              We're looking for students who are passionate, curious, and ready to make a difference.
+              Join a vibrant community of scholars, innovators, and changemakers. We're looking for
+              students who are passionate, curious, and ready to make a difference.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-white text-purple-700 hover:bg-purple-50">
                 Apply Now <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white/40 text-white hover:bg-white/10">
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent border-white/40 text-white hover:bg-white/10"
+              >
                 Schedule a Visit
               </Button>
             </div>
@@ -199,7 +205,6 @@ export function AdmissionsPage() {
       </div>
 
       <main className="max-w-7xl mx-auto px-6 py-16 space-y-20">
-
         {/* Application Steps */}
         <section>
           <div className="text-center mb-10">
@@ -216,7 +221,9 @@ export function AdmissionsPage() {
                 )}
                 <Card className="relative z-10 hover:shadow-lg transition-shadow h-full">
                   <CardContent className="p-6">
-                    <div className={`${step.bg} ${step.color} w-12 h-12 rounded-xl flex items-center justify-center mb-4`}>
+                    <div
+                      className={`${step.bg} ${step.color} w-12 h-12 rounded-xl flex items-center justify-center mb-4`}
+                    >
                       <step.icon className="w-6 h-6" />
                     </div>
                     <div className="text-slate-300 text-xs mb-1">STEP {step.step}</div>
@@ -244,7 +251,10 @@ export function AdmissionsPage() {
             </p>
             <div className="space-y-3">
               {requirements.map((req) => (
-                <div key={req.label} className="flex items-start gap-3 p-4 bg-white border border-slate-100 rounded-xl hover:shadow-sm transition-shadow">
+                <div
+                  key={req.label}
+                  className="flex items-start gap-3 p-4 bg-white border border-slate-100 rounded-xl hover:shadow-sm transition-shadow"
+                >
                   <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                   <div>
                     <p className="text-slate-800 text-sm">{req.label}</p>
@@ -256,8 +266,12 @@ export function AdmissionsPage() {
             <div className="mt-5 p-4 bg-amber-50 border border-amber-100 rounded-xl flex items-start gap-3">
               <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
               <div>
-                <p className="text-amber-800 text-sm">International students may have additional requirements.</p>
-                <a href="#contact" className="text-amber-600 text-xs hover:underline">Contact our international office →</a>
+                <p className="text-amber-800 text-sm">
+                  International students may have additional requirements.
+                </p>
+                <a href="#contact" className="text-amber-600 text-xs hover:underline">
+                  Contact our international office →
+                </a>
               </div>
             </div>
           </div>
@@ -268,7 +282,10 @@ export function AdmissionsPage() {
             <p className="text-slate-500 text-sm mb-6">All deadlines are at 11:59 PM EST.</p>
             <div className="space-y-3">
               {deadlines.map((dl) => (
-                <div key={dl.label} className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl">
+                <div
+                  key={dl.label}
+                  className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl"
+                >
                   <Calendar className="w-5 h-5 text-slate-400 shrink-0" />
                   <div className="flex-1">
                     <p className="text-slate-800 text-sm">{dl.label}</p>
@@ -289,15 +306,17 @@ export function AdmissionsPage() {
             </span>
             <h2 className="text-slate-900 mb-2">We Make College Affordable</h2>
             <p className="text-slate-500 max-w-xl mx-auto">
-              Over 70% of our students receive some form of financial assistance.
-              Explore your options below.
+              Over 70% of our students receive some form of financial assistance. Explore your
+              options below.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {aidTypes.map((aid) => (
               <Card key={aid.title} className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <div className={`${aid.bg} ${aid.color} w-12 h-12 rounded-xl flex items-center justify-center mb-4`}>
+                  <div
+                    className={`${aid.bg} ${aid.color} w-12 h-12 rounded-xl flex items-center justify-center mb-4`}
+                  >
                     <aid.icon className="w-6 h-6" />
                   </div>
                   <h4 className="text-slate-900 mb-1">{aid.title}</h4>
@@ -335,13 +354,18 @@ export function AdmissionsPage() {
             </span>
             <h2 className="text-slate-900 mb-4">See It For Yourself</h2>
             <p className="text-slate-500 leading-relaxed mb-6">
-              Nothing beats experiencing campus life in person. Join a guided tour, sit in on a class,
-              and meet current students. We host in-person and virtual visits throughout the year.
+              Nothing beats experiencing campus life in person. Join a guided tour, sit in on a
+              class, and meet current students. We host in-person and virtual visits throughout the
+              year.
             </p>
             <div className="space-y-3 mb-6">
               {[
                 { icon: Calendar, label: "In-Person Tours", detail: "Mon–Fri at 10 AM & 2 PM" },
-                { icon: MapPin, label: "Starting Location", detail: "Admissions Welcome Centre, Main Gate" },
+                {
+                  icon: MapPin,
+                  label: "Starting Location",
+                  detail: "Admissions Welcome Centre, Main Gate",
+                },
                 { icon: Phone, label: "Book a Visit", detail: "(555) 200-0100" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-3">
@@ -366,7 +390,9 @@ export function AdmissionsPage() {
         <section>
           <div className="text-center mb-10">
             <h2 className="text-slate-900 mb-2">Frequently Asked Questions</h2>
-            <p className="text-slate-500">Can't find your answer? Contact our admissions office directly.</p>
+            <p className="text-slate-500">
+              Can't find your answer? Contact our admissions office directly.
+            </p>
           </div>
           <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, idx) => (
@@ -400,19 +426,22 @@ export function AdmissionsPage() {
           <GraduationCap className="w-12 h-12 mx-auto mb-4 text-purple-200" />
           <h2 className="text-white mb-3">Ready to Apply?</h2>
           <p className="text-purple-100 mb-6 max-w-xl mx-auto">
-            Join thousands of students who have transformed their futures at State University.
-            Start your application today — it only takes a few minutes.
+            Join thousands of students who have transformed their futures at State University. Start
+            your application today — it only takes a few minutes.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button size="lg" className="bg-white text-purple-700 hover:bg-purple-50">
               Begin Application <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button size="lg" variant="outline" className="bg-transparent border-white/40 text-white hover:bg-white/10">
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-transparent border-white/40 text-white hover:bg-white/10"
+            >
               Contact Admissions
             </Button>
           </div>
         </section>
-
       </main>
     </div>
   );

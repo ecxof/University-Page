@@ -33,20 +33,120 @@ const programFilters: { key: ProgramLevel; label: string }[] = [
 ];
 
 const programs = [
-  { id: 1, level: "undergraduate", icon: Code, color: "text-blue-600", bg: "bg-blue-50", title: "BSc Computer Science", dept: "Engineering & Tech", duration: "4 years", credits: "120", popular: true },
-  { id: 2, level: "undergraduate", icon: FlaskConical, color: "text-emerald-600", bg: "bg-emerald-50", title: "BSc Biology", dept: "Natural Sciences", duration: "4 years", credits: "128" },
-  { id: 3, level: "graduate", icon: BarChart3, color: "text-purple-600", bg: "bg-purple-50", title: "MBA Business Administration", dept: "Business School", duration: "2 years", credits: "60", popular: true },
-  { id: 4, level: "undergraduate", icon: Palette, color: "text-pink-600", bg: "bg-pink-50", title: "BA Fine Arts", dept: "Arts & Humanities", duration: "4 years", credits: "120" },
-  { id: 5, level: "graduate", icon: Microscope, color: "text-cyan-600", bg: "bg-cyan-50", title: "MSc Data Science", dept: "Engineering & Tech", duration: "18 months", credits: "45", popular: true },
-  { id: 6, level: "undergraduate", icon: Scale, color: "text-orange-600", bg: "bg-orange-50", title: "BA Political Science", dept: "Social Sciences", duration: "4 years", credits: "120" },
-  { id: 7, level: "online", icon: Laptop, color: "text-indigo-600", bg: "bg-indigo-50", title: "BSc Information Systems", dept: "Engineering & Tech", duration: "4 years", credits: "120" },
-  { id: 8, level: "graduate", icon: HeartPulse, color: "text-red-600", bg: "bg-red-50", title: "MSc Public Health", dept: "Health Sciences", duration: "2 years", credits: "54" },
-  { id: 9, level: "online", icon: BarChart3, color: "text-teal-600", bg: "bg-teal-50", title: "MBA (Online)", dept: "Business School", duration: "2 years", credits: "60", popular: true },
+  {
+    id: 1,
+    level: "undergraduate",
+    icon: Code,
+    color: "text-blue-600",
+    bg: "bg-blue-50",
+    title: "BSc Computer Science",
+    dept: "Engineering & Tech",
+    duration: "4 years",
+    credits: "120",
+    popular: true,
+  },
+  {
+    id: 2,
+    level: "undergraduate",
+    icon: FlaskConical,
+    color: "text-emerald-600",
+    bg: "bg-emerald-50",
+    title: "BSc Biology",
+    dept: "Natural Sciences",
+    duration: "4 years",
+    credits: "128",
+  },
+  {
+    id: 3,
+    level: "graduate",
+    icon: BarChart3,
+    color: "text-purple-600",
+    bg: "bg-purple-50",
+    title: "MBA Business Administration",
+    dept: "Business School",
+    duration: "2 years",
+    credits: "60",
+    popular: true,
+  },
+  {
+    id: 4,
+    level: "undergraduate",
+    icon: Palette,
+    color: "text-pink-600",
+    bg: "bg-pink-50",
+    title: "BA Fine Arts",
+    dept: "Arts & Humanities",
+    duration: "4 years",
+    credits: "120",
+  },
+  {
+    id: 5,
+    level: "graduate",
+    icon: Microscope,
+    color: "text-cyan-600",
+    bg: "bg-cyan-50",
+    title: "MSc Data Science",
+    dept: "Engineering & Tech",
+    duration: "18 months",
+    credits: "45",
+    popular: true,
+  },
+  {
+    id: 6,
+    level: "undergraduate",
+    icon: Scale,
+    color: "text-orange-600",
+    bg: "bg-orange-50",
+    title: "BA Political Science",
+    dept: "Social Sciences",
+    duration: "4 years",
+    credits: "120",
+  },
+  {
+    id: 7,
+    level: "online",
+    icon: Laptop,
+    color: "text-indigo-600",
+    bg: "bg-indigo-50",
+    title: "BSc Information Systems",
+    dept: "Engineering & Tech",
+    duration: "4 years",
+    credits: "120",
+  },
+  {
+    id: 8,
+    level: "graduate",
+    icon: HeartPulse,
+    color: "text-red-600",
+    bg: "bg-red-50",
+    title: "MSc Public Health",
+    dept: "Health Sciences",
+    duration: "2 years",
+    credits: "54",
+  },
+  {
+    id: 9,
+    level: "online",
+    icon: BarChart3,
+    color: "text-teal-600",
+    bg: "bg-teal-50",
+    title: "MBA (Online)",
+    dept: "Business School",
+    duration: "2 years",
+    credits: "60",
+    popular: true,
+  },
 ];
 
 const departments = [
   { name: "Engineering & Technology", programs: 14, faculty: 82, icon: Code, color: "bg-blue-600" },
-  { name: "Natural Sciences", programs: 11, faculty: 74, icon: FlaskConical, color: "bg-emerald-600" },
+  {
+    name: "Natural Sciences",
+    programs: 11,
+    faculty: 74,
+    icon: FlaskConical,
+    color: "bg-emerald-600",
+  },
   { name: "Business School", programs: 9, faculty: 61, icon: BarChart3, color: "bg-purple-600" },
   { name: "Arts & Humanities", programs: 12, faculty: 58, icon: Palette, color: "bg-pink-600" },
   { name: "Social Sciences", programs: 10, faculty: 52, icon: Users, color: "bg-orange-600" },
@@ -70,10 +170,34 @@ const typeColors: Record<string, string> = {
 };
 
 const faculty = [
-  { name: "Dr. Sarah Evans", dept: "Computer Science", title: "Associate Professor", research: "AI & Machine Learning", rating: 4.9 },
-  { name: "Prof. James Carter", dept: "Mathematics", title: "Full Professor", research: "Applied Statistics", rating: 4.8 },
-  { name: "Dr. Priya Mehta", dept: "Biology", title: "Associate Professor", research: "Genomics & Evolution", rating: 4.7 },
-  { name: "Prof. Leon Schmidt", dept: "Business", title: "Full Professor", research: "Behavioural Economics", rating: 4.9 },
+  {
+    name: "Dr. Sarah Evans",
+    dept: "Computer Science",
+    title: "Associate Professor",
+    research: "AI & Machine Learning",
+    rating: 4.9,
+  },
+  {
+    name: "Prof. James Carter",
+    dept: "Mathematics",
+    title: "Full Professor",
+    research: "Applied Statistics",
+    rating: 4.8,
+  },
+  {
+    name: "Dr. Priya Mehta",
+    dept: "Biology",
+    title: "Associate Professor",
+    research: "Genomics & Evolution",
+    rating: 4.7,
+  },
+  {
+    name: "Prof. Leon Schmidt",
+    dept: "Business",
+    title: "Full Professor",
+    research: "Behavioural Economics",
+    rating: 4.9,
+  },
 ];
 
 export function AcademicsPage() {
@@ -95,7 +219,9 @@ export function AcademicsPage() {
         <div className="relative max-w-7xl mx-auto px-6 py-24">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4">
-              <a href="/" className="text-blue-300 hover:text-white text-sm transition-colors">Home</a>
+              <a href="/" className="text-blue-300 hover:text-white text-sm transition-colors">
+                Home
+              </a>
               <ChevronRight className="w-4 h-4 text-blue-400" />
               <span className="text-white text-sm">Academics</span>
             </div>
@@ -104,14 +230,18 @@ export function AcademicsPage() {
             </span>
             <h1 className="text-white text-5xl mb-5">Academic Excellence</h1>
             <p className="text-blue-100 text-xl mb-8 leading-relaxed">
-              Discover world-class programs designed to challenge your mind, broaden your perspective,
-              and prepare you for a rapidly evolving global landscape.
+              Discover world-class programs designed to challenge your mind, broaden your
+              perspective, and prepare you for a rapidly evolving global landscape.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
                 Browse All Programs <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white/40 text-white hover:bg-white/10">
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent border-white/40 text-white hover:bg-white/10"
+              >
                 Book an Advisor
               </Button>
             </div>
@@ -137,13 +267,13 @@ export function AcademicsPage() {
       </div>
 
       <main className="max-w-7xl mx-auto px-6 py-16 space-y-20">
-
         {/* Program Types */}
         <section>
           <div className="text-center mb-10">
             <h2 className="text-slate-900 mb-2">Study Pathways</h2>
             <p className="text-slate-500 max-w-xl mx-auto">
-              Whether you're starting fresh, advancing your career, or learning from home — we have a pathway for you.
+              Whether you're starting fresh, advancing your career, or learning from home — we have
+              a pathway for you.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -176,16 +306,23 @@ export function AcademicsPage() {
                 border: "border-emerald-100",
               },
             ].map((p) => (
-              <Card key={p.title} className={`border-2 ${p.border} hover:shadow-lg transition-shadow`}>
+              <Card
+                key={p.title}
+                className={`border-2 ${p.border} hover:shadow-lg transition-shadow`}
+              >
                 <CardContent className="p-8">
-                  <div className={`${p.bg} ${p.color} w-14 h-14 rounded-2xl flex items-center justify-center mb-5`}>
+                  <div
+                    className={`${p.bg} ${p.color} w-14 h-14 rounded-2xl flex items-center justify-center mb-5`}
+                  >
                     <p.icon className="w-7 h-7" />
                   </div>
                   <h3 className="text-slate-900 mb-2">{p.title}</h3>
                   <p className="text-slate-500 text-sm mb-5 leading-relaxed">{p.desc}</p>
                   <div className="flex items-center justify-between">
                     <Badge className={`${p.bg} ${p.color} border-0 text-xs`}>{p.stat}</Badge>
-                    <button className={`${p.color} text-sm flex items-center gap-1 hover:gap-2 transition-all`}>
+                    <button
+                      className={`${p.color} text-sm flex items-center gap-1 hover:gap-2 transition-all`}
+                    >
                       Explore <ChevronRight className="w-4 h-4" />
                     </button>
                   </div>
@@ -220,14 +357,21 @@ export function AcademicsPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((prog) => (
-              <Card key={prog.id} className="hover:shadow-lg transition-shadow cursor-pointer group">
+              <Card
+                key={prog.id}
+                className="hover:shadow-lg transition-shadow cursor-pointer group"
+              >
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
-                    <div className={`${prog.bg} ${prog.color} w-11 h-11 rounded-xl flex items-center justify-center`}>
+                    <div
+                      className={`${prog.bg} ${prog.color} w-11 h-11 rounded-xl flex items-center justify-center`}
+                    >
                       <prog.icon className="w-5 h-5" />
                     </div>
                     {prog.popular && (
-                      <Badge className="bg-amber-50 text-amber-600 border-amber-100 text-xs">Popular</Badge>
+                      <Badge className="bg-amber-50 text-amber-600 border-amber-100 text-xs">
+                        Popular
+                      </Badge>
                     )}
                   </div>
                   <h4 className="text-slate-900 mb-1">{prog.title}</h4>
@@ -257,9 +401,9 @@ export function AcademicsPage() {
             </span>
             <h2 className="text-slate-900 mb-4">Pushing the Frontiers of Knowledge</h2>
             <p className="text-slate-500 leading-relaxed mb-6">
-              Our research institutes tackle some of the world's most pressing challenges.
-              With $120M in annual research funding, our faculty and students are at the forefront
-              of discovery in AI, biomedical science, sustainability, and social policy.
+              Our research institutes tackle some of the world's most pressing challenges. With
+              $120M in annual research funding, our faculty and students are at the forefront of
+              discovery in AI, biomedical science, sustainability, and social policy.
             </p>
             <div className="grid grid-cols-2 gap-4 mb-6">
               {[
@@ -295,9 +439,14 @@ export function AcademicsPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {departments.map((dept) => (
-              <Card key={dept.name} className="hover:shadow-md transition-shadow cursor-pointer group">
+              <Card
+                key={dept.name}
+                className="hover:shadow-md transition-shadow cursor-pointer group"
+              >
                 <CardContent className="p-6 flex items-center gap-4">
-                  <div className={`${dept.color} text-white w-12 h-12 rounded-xl flex items-center justify-center shrink-0`}>
+                  <div
+                    className={`${dept.color} text-white w-12 h-12 rounded-xl flex items-center justify-center shrink-0`}
+                  >
                     <dept.icon className="w-6 h-6" />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -329,7 +478,11 @@ export function AcademicsPage() {
               <Card key={f.name} className="hover:shadow-md transition-shadow text-center">
                 <CardContent className="p-6">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 mx-auto mb-4 flex items-center justify-center text-white text-xl">
-                    {f.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                    {f.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")
+                      .slice(0, 2)}
                   </div>
                   <h4 className="text-slate-900 text-sm">{f.name}</h4>
                   <p className="text-blue-600 text-xs mb-1">{f.title}</p>
@@ -353,7 +506,10 @@ export function AcademicsPage() {
               <p className="text-slate-500 text-sm mb-6">Key dates for Spring 2025</p>
               <div className="space-y-3">
                 {calendarEvents.map((event) => (
-                  <div key={event.date} className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:shadow-sm transition-shadow">
+                  <div
+                    key={event.date}
+                    className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:shadow-sm transition-shadow"
+                  >
                     <div className="bg-slate-900 text-white text-xs px-3 py-2 rounded-lg text-center min-w-[60px]">
                       {event.date}
                     </div>
@@ -373,7 +529,9 @@ export function AcademicsPage() {
             {/* Library */}
             <div>
               <h2 className="text-slate-900 mb-2">University Library</h2>
-              <p className="text-slate-500 text-sm mb-4">Your gateway to knowledge — open 7 days a week</p>
+              <p className="text-slate-500 text-sm mb-4">
+                Your gateway to knowledge — open 7 days a week
+              </p>
               <div className="rounded-2xl overflow-hidden mb-4 shadow">
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1718327453695-4d32b94c90a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwbGlicmFyeSUyMGJvb2tzJTIwc3R1ZHl8ZW58MXx8fHwxNzcyMTg2ODA0fDA&ixlib=rb-4.1.0&q=80&w=1080"
@@ -405,18 +563,22 @@ export function AcademicsPage() {
           <Trophy className="w-12 h-12 mx-auto mb-4 text-blue-200" />
           <h2 className="text-white mb-3">Ready to Begin Your Academic Journey?</h2>
           <p className="text-blue-100 mb-6 max-w-xl mx-auto">
-            Schedule a consultation with one of our academic advisors and find the program that's right for you.
+            Schedule a consultation with one of our academic advisors and find the program that's
+            right for you.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
               Apply Now <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white/40 text-white hover:bg-white/10"
+            >
               Book an Advisor
             </Button>
           </div>
         </section>
-
       </main>
     </div>
   );

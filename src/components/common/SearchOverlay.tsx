@@ -1,5 +1,14 @@
 import { useState, useEffect, useRef } from "react";
-import { Search, X, Clock, TrendingUp, BookOpen, Users, GraduationCap, ChevronRight } from "lucide-react";
+import {
+  Search,
+  X,
+  Clock,
+  TrendingUp,
+  BookOpen,
+  Users,
+  GraduationCap,
+  ChevronRight,
+} from "lucide-react";
 
 interface SearchResult {
   type: string;
@@ -11,20 +20,95 @@ interface SearchResult {
 }
 
 const allResults: SearchResult[] = [
-  { type: "Course", title: "Introduction to Computer Science", subtitle: "CS 101 · Dr. Evans · Fall 2024", icon: BookOpen, iconColor: "text-blue-600", href: "#" },
-  { type: "Course", title: "Calculus III", subtitle: "MATH 301 · Dr. Patel · Fall 2024", icon: BookOpen, iconColor: "text-blue-600", href: "#" },
-  { type: "Course", title: "Organic Chemistry", subtitle: "CHEM 210 · Dr. Rivera · Fall 2024", icon: BookOpen, iconColor: "text-blue-600", href: "#" },
-  { type: "Faculty", title: "Dr. Sarah Evans", subtitle: "Computer Science Department", icon: Users, iconColor: "text-purple-600", href: "#" },
-  { type: "Faculty", title: "Prof. James Carter", subtitle: "Mathematics Department", icon: Users, iconColor: "text-purple-600", href: "#" },
-  { type: "Program", title: "BSc Computer Science", subtitle: "4-year undergraduate program", icon: GraduationCap, iconColor: "text-emerald-600", href: "#" },
-  { type: "Program", title: "MBA Business Administration", subtitle: "2-year graduate program", icon: GraduationCap, iconColor: "text-emerald-600", href: "#" },
-  { type: "Page", title: "Admissions", subtitle: "Apply to State University", icon: ChevronRight, iconColor: "text-orange-600", href: "#admissions" },
-  { type: "Page", title: "Financial Aid", subtitle: "Scholarships and tuition support", icon: ChevronRight, iconColor: "text-orange-600", href: "#" },
-  { type: "Page", title: "Campus Map", subtitle: "Navigate our campus", icon: ChevronRight, iconColor: "text-orange-600", href: "#" },
+  {
+    type: "Course",
+    title: "Introduction to Computer Science",
+    subtitle: "CS 101 · Dr. Evans · Fall 2024",
+    icon: BookOpen,
+    iconColor: "text-blue-600",
+    href: "#",
+  },
+  {
+    type: "Course",
+    title: "Calculus III",
+    subtitle: "MATH 301 · Dr. Patel · Fall 2024",
+    icon: BookOpen,
+    iconColor: "text-blue-600",
+    href: "#",
+  },
+  {
+    type: "Course",
+    title: "Organic Chemistry",
+    subtitle: "CHEM 210 · Dr. Rivera · Fall 2024",
+    icon: BookOpen,
+    iconColor: "text-blue-600",
+    href: "#",
+  },
+  {
+    type: "Faculty",
+    title: "Dr. Sarah Evans",
+    subtitle: "Computer Science Department",
+    icon: Users,
+    iconColor: "text-purple-600",
+    href: "#",
+  },
+  {
+    type: "Faculty",
+    title: "Prof. James Carter",
+    subtitle: "Mathematics Department",
+    icon: Users,
+    iconColor: "text-purple-600",
+    href: "#",
+  },
+  {
+    type: "Program",
+    title: "BSc Computer Science",
+    subtitle: "4-year undergraduate program",
+    icon: GraduationCap,
+    iconColor: "text-emerald-600",
+    href: "#",
+  },
+  {
+    type: "Program",
+    title: "MBA Business Administration",
+    subtitle: "2-year graduate program",
+    icon: GraduationCap,
+    iconColor: "text-emerald-600",
+    href: "#",
+  },
+  {
+    type: "Page",
+    title: "Admissions",
+    subtitle: "Apply to State University",
+    icon: ChevronRight,
+    iconColor: "text-orange-600",
+    href: "#admissions",
+  },
+  {
+    type: "Page",
+    title: "Financial Aid",
+    subtitle: "Scholarships and tuition support",
+    icon: ChevronRight,
+    iconColor: "text-orange-600",
+    href: "#",
+  },
+  {
+    type: "Page",
+    title: "Campus Map",
+    subtitle: "Navigate our campus",
+    icon: ChevronRight,
+    iconColor: "text-orange-600",
+    href: "#",
+  },
 ];
 
 const recentSearches = ["MATH 301", "Financial Aid", "Career Fair", "Dr. Evans"];
-const trending = ["Spring Registration", "Graduation Ceremony", "Scholarship Applications", "Campus Events"];
+const trending = [
+  "Spring Registration",
+  "Graduation Ceremony",
+  "Scholarship Applications",
+  "Campus Events",
+];
 
 interface SearchOverlayProps {
   isOpen: boolean;
@@ -35,13 +119,14 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const filtered = query.trim().length > 0
-    ? allResults.filter(
-        (r) =>
-          r.title.toLowerCase().includes(query.toLowerCase()) ||
-          r.subtitle.toLowerCase().includes(query.toLowerCase())
-      )
-    : [];
+  const filtered =
+    query.trim().length > 0
+      ? allResults.filter(
+          (r) =>
+            r.title.toLowerCase().includes(query.toLowerCase()) ||
+            r.subtitle.toLowerCase().includes(query.toLowerCase()),
+        )
+      : [];
 
   useEffect(() => {
     if (isOpen) {
@@ -167,7 +252,9 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                         onClick={onClose}
                         className="flex items-center gap-4 px-5 py-3.5 hover:bg-slate-50 transition-colors"
                       >
-                        <div className={`w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center shrink-0`}>
+                        <div
+                          className={`w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center shrink-0`}
+                        >
                           <result.icon className={`w-4 h-4 ${result.iconColor}`} />
                         </div>
                         <div className="min-w-0">

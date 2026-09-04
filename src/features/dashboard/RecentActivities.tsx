@@ -76,9 +76,7 @@ export function RecentActivities() {
           <div className="space-y-4">
             {activities.map((activity) => (
               <div key={activity.id} className="flex gap-3">
-                <div
-                  className={`${activity.bgColor} ${activity.color} p-2 rounded-lg h-fit`}
-                >
+                <div className={`${activity.bgColor} ${activity.color} p-2 rounded-lg h-fit`}>
                   <activity.icon className="w-4 h-4" />
                 </div>
                 <div className="flex-1 space-y-1">

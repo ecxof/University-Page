@@ -45,16 +45,16 @@ The **University App Dashboard** is a full-featured university web portal built 
 
 ### Highlights
 
-| Metric | Value |
-|---|---|
-| 🎓 Degree Programs | 50+ across 6 colleges |
-| 👩‍🏫 Faculty Members | 856 |
-| 🧑‍🎓 Enrolled Students | 12,400+ |
-| 💼 Graduate Employment Rate | 95% |
-| 🔬 Annual Research Funding | $120M |
-| 🏠 Residence Halls | 3 |
-| 🏟️ Varsity Sports | 18 |
-| 🤝 Student Clubs | 60+ |
+| Metric                      | Value                 |
+| --------------------------- | --------------------- |
+| 🎓 Degree Programs          | 50+ across 6 colleges |
+| 👩‍🏫 Faculty Members          | 856                   |
+| 🧑‍🎓 Enrolled Students        | 12,400+               |
+| 💼 Graduate Employment Rate | 95%                   |
+| 🔬 Annual Research Funding  | $120M                 |
+| 🏠 Residence Halls          | 3                     |
+| 🏟️ Varsity Sports           | 18                    |
+| 🤝 Student Clubs            | 60+                   |
 
 ---
 
@@ -154,21 +154,21 @@ Full student account management with 4 tabs:
 
 ## 🛠 Tech Stack
 
-| Category | Technology |
-|---|---|
-| **Framework** | [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) |
-| **Build Tool** | [Vite 6](https://vitejs.dev/) with `@vitejs/plugin-react-swc` |
-| **Routing** | [React Router v7](https://reactrouter.com/) |
-| **UI Primitives** | [Radix UI](https://www.radix-ui.com/) (20+ primitives) |
-| **Charts** | [Recharts 2](https://recharts.org/) |
-| **Icons** | [Lucide React](https://lucide.dev/) |
-| **Styling** | Vanilla CSS (`index.css`) + utility classes |
-| **Theme** | [next-themes](https://github.com/pacocoursey/next-themes) |
-| **Forms** | [React Hook Form](https://react-hook-form.com/) |
-| **Notifications** | [Sonner](https://sonner.emilkowal.ski/) |
-| **Components** | `class-variance-authority`, `tailwind-merge`, `clsx` |
-| **Carousel** | [Embla Carousel](https://www.embla-carousel.com/) |
-| **Other** | `react-day-picker`, `vaul` (drawer), `cmdk` (command palette), `input-otp`, `react-resizable-panels` |
+| Category          | Technology                                                                                           |
+| ----------------- | ---------------------------------------------------------------------------------------------------- |
+| **Framework**     | [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)                       |
+| **Build Tool**    | [Vite 6](https://vitejs.dev/) with `@vitejs/plugin-react-swc`                                        |
+| **Routing**       | [React Router v7](https://reactrouter.com/)                                                          |
+| **UI Primitives** | [Radix UI](https://www.radix-ui.com/) (20+ primitives)                                               |
+| **Charts**        | [Recharts 2](https://recharts.org/)                                                                  |
+| **Icons**         | [Lucide React](https://lucide.dev/)                                                                  |
+| **Styling**       | Vanilla CSS (`index.css`) + utility classes                                                          |
+| **Theme**         | [next-themes](https://github.com/pacocoursey/next-themes)                                            |
+| **Forms**         | [React Hook Form](https://react-hook-form.com/)                                                      |
+| **Notifications** | [Sonner](https://sonner.emilkowal.ski/)                                                              |
+| **Components**    | `class-variance-authority`, `tailwind-merge`, `clsx`                                                 |
+| **Carousel**      | [Embla Carousel](https://www.embla-carousel.com/)                                                    |
+| **Other**         | `react-day-picker`, `vaul` (drawer), `cmdk` (command palette), `input-otp`, `react-resizable-panels` |
 
 ---
 
@@ -274,14 +274,14 @@ The build output is placed in the `dist/` directory, ready for static hosting.
 
 ## 🗺 Available Routes
 
-| Route | Component | Description |
-|---|---|---|
-| `/` | `HomePage` | Dashboard with analytics, stats, and charts |
-| `/academics` | `AcademicsPage` | Programs, departments, faculty, calendar |
-| `/admissions` | `AdmissionsPage` | Application steps, requirements, deadlines, aid |
-| `/campus` | `CampusLifePage` | Housing, dining, athletics, wellness, clubs |
-| `/notifications` | `NotificationsPage` | Notification centre |
-| `/account` | `AccountPage` | Profile, security, notification preferences, privacy |
+| Route            | Component           | Description                                          |
+| ---------------- | ------------------- | ---------------------------------------------------- |
+| `/`              | `HomePage`          | Dashboard with analytics, stats, and charts          |
+| `/academics`     | `AcademicsPage`     | Programs, departments, faculty, calendar             |
+| `/admissions`    | `AdmissionsPage`    | Application steps, requirements, deadlines, aid      |
+| `/campus`        | `CampusLifePage`    | Housing, dining, athletics, wellness, clubs          |
+| `/notifications` | `NotificationsPage` | Notification centre                                  |
+| `/account`       | `AccountPage`       | Profile, security, notification preferences, privacy |
 
 > All routes are nested under the `Root` layout which renders the sticky `Navigation` and `Footer`.
 
@@ -290,7 +290,9 @@ The build output is placed in the `dist/` directory, ready for static hosting.
 ## 🧩 Key Components
 
 ### `Navigation`
+
 Sticky top navigation bar with:
+
 - University logo and branding
 - Desktop nav links with active-route highlighting
 - Search icon → opens `SearchOverlay`
@@ -300,12 +302,15 @@ Sticky top navigation bar with:
 - Responsive hamburger menu with full mobile drawer
 
 ### `SearchOverlay`
+
 Full-screen modal search experience triggered from the navigation bar.
 
 ### `EnrollmentChart` / `DepartmentBreakdown` / `GradeDistribution`
+
 Recharts-powered interactive visualisations rendered on the home dashboard.
 
 ### `ImageWithFallback`
+
 Graceful image loading wrapper that falls back to a styled placeholder if the source fails to load — used across all hero sections and photo galleries.
 
 ---
@@ -314,15 +319,15 @@ Graceful image loading wrapper that falls back to a styled placeholder if the so
 
 The `src/components/ui/` directory contains **48 fully accessible, Radix UI-based components** covering:
 
-| Category | Components |
-|---|---|
-| **Layout** | `card`, `separator`, `resizable`, `scroll-area`, `aspect-ratio` |
-| **Navigation** | `navigation-menu`, `menubar`, `breadcrumb`, `tabs`, `pagination` |
-| **Forms** | `button`, `input`, `label`, `checkbox`, `radio-group`, `select`, `slider`, `switch`, `toggle`, `toggle-group`, `textarea`, `form`, `input-otp` |
-| **Overlay** | `dialog`, `alert-dialog`, `sheet`, `drawer`, `popover`, `tooltip`, `hover-card`, `context-menu`, `dropdown-menu` |
-| **Feedback** | `badge`, `progress`, `sonner`, `skeleton`, `alert` |
-| **Data Display** | `table`, `accordion`, `collapsible`, `avatar`, `calendar`, `chart` |
-| **Utility** | `command`, `carousel`, `sidebar` |
+| Category         | Components                                                                                                                                     |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Layout**       | `card`, `separator`, `resizable`, `scroll-area`, `aspect-ratio`                                                                                |
+| **Navigation**   | `navigation-menu`, `menubar`, `breadcrumb`, `tabs`, `pagination`                                                                               |
+| **Forms**        | `button`, `input`, `label`, `checkbox`, `radio-group`, `select`, `slider`, `switch`, `toggle`, `toggle-group`, `textarea`, `form`, `input-otp` |
+| **Overlay**      | `dialog`, `alert-dialog`, `sheet`, `drawer`, `popover`, `tooltip`, `hover-card`, `context-menu`, `dropdown-menu`                               |
+| **Feedback**     | `badge`, `progress`, `sonner`, `skeleton`, `alert`                                                                                             |
+| **Data Display** | `table`, `accordion`, `collapsible`, `avatar`, `calendar`, `chart`                                                                             |
+| **Utility**      | `command`, `carousel`, `sidebar`                                                                                                               |
 
 All components are built with `class-variance-authority` for consistent variant management.
 

@@ -67,7 +67,7 @@ export function ContactSection() {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -96,8 +96,8 @@ export function ContactSection() {
           </span>
           <h2 className="text-slate-900 text-3xl mb-3">Contact Us</h2>
           <p className="text-slate-500 max-w-xl mx-auto">
-            Have questions about admissions, programs, or campus life? Our team is
-            here to help you every step of the way.
+            Have questions about admissions, programs, or campus life? Our team is here to help you
+            every step of the way.
           </p>
         </div>
 
@@ -107,13 +107,17 @@ export function ContactSection() {
             {/* Contact Detail Cards */}
             {contactDetails.map((item) => (
               <div key={item.title} className="flex items-start gap-4">
-                <div className={`${item.bg} ${item.color} w-11 h-11 rounded-xl flex items-center justify-center shrink-0`}>
+                <div
+                  className={`${item.bg} ${item.color} w-11 h-11 rounded-xl flex items-center justify-center shrink-0`}
+                >
                   <item.icon className="w-5 h-5" />
                 </div>
                 <div>
                   <p className="text-slate-800 text-sm font-medium">{item.title}</p>
                   {item.lines.map((l) => (
-                    <p key={l} className="text-slate-500 text-sm">{l}</p>
+                    <p key={l} className="text-slate-500 text-sm">
+                      {l}
+                    </p>
                   ))}
                 </div>
               </div>
@@ -121,9 +125,7 @@ export function ContactSection() {
 
             {/* Department Quick Contacts */}
             <div className="pt-4">
-              <p className="text-slate-700 text-sm font-medium mb-3">
-                Direct Department Contacts
-              </p>
+              <p className="text-slate-700 text-sm font-medium mb-3">Direct Department Contacts</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {departments.map((dept) => (
                   <Card
@@ -133,9 +135,7 @@ export function ContactSection() {
                     <CardContent className="p-4 flex items-center gap-3">
                       <dept.icon className="w-4 h-4 text-blue-600 shrink-0" />
                       <div className="min-w-0">
-                        <p className="text-slate-800 text-xs font-medium truncate">
-                          {dept.label}
-                        </p>
+                        <p className="text-slate-800 text-xs font-medium truncate">{dept.label}</p>
                         <p className="text-slate-400 text-xs truncate">{dept.email}</p>
                       </div>
                     </CardContent>
@@ -174,8 +174,8 @@ export function ContactSection() {
                     <CheckCircle className="w-16 h-16 text-emerald-500 mb-4" />
                     <h3 className="text-slate-900 mb-2">Message Sent!</h3>
                     <p className="text-slate-500 text-sm max-w-xs mb-6">
-                      Thank you for reaching out. A member of our team will get back
-                      to you within 1–2 business days.
+                      Thank you for reaching out. A member of our team will get back to you within
+                      1–2 business days.
                     </p>
                     <Button variant="outline" onClick={handleReset}>
                       Send Another Message
@@ -287,11 +287,7 @@ export function ContactSection() {
                     >
                       {loading ? (
                         <span className="flex items-center gap-2">
-                          <svg
-                            className="animate-spin w-4 h-4"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
+                          <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
                             <circle
                               className="opacity-25"
                               cx="12"
