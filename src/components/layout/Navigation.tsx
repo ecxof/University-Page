@@ -21,8 +21,6 @@ export function Navigation() {
     { name: "Contact", href: "/#contact", isRoute: false },
   ];
 
-  const isHome = location.pathname === "/";
-
   return (
     <>
       <SearchOverlay isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
@@ -64,7 +62,7 @@ export function Navigation() {
                   >
                     {link.name}
                   </a>
-                )
+                ),
               )}
             </div>
 
@@ -117,11 +115,7 @@ export function Navigation() {
                 className="md:hidden"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
-                {mobileMenuOpen ? (
-                  <X className="w-5 h-5" />
-                ) : (
-                  <Menu className="w-5 h-5" />
-                )}
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </Button>
             </div>
           </div>
@@ -154,7 +148,7 @@ export function Navigation() {
                     >
                       {link.name}
                     </a>
-                  )
+                  ),
                 )}
                 <div className="h-px bg-slate-100 my-2" />
 
@@ -199,10 +193,7 @@ export function Navigation() {
                   My Account
                 </button>
 
-                <Button
-                  className="w-full mt-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <Button className="w-full mt-2" onClick={() => setMobileMenuOpen(false)}>
                   Student Portal
                 </Button>
               </div>
