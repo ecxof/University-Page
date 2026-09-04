@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
+import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
 // NOTE: The versioned aliases below (e.g. 'vaul@1.1.2' -> 'vaul') are load-bearing:
@@ -49,7 +50,7 @@ const figmaExportAliases: Record<string, string> = {
 };
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
