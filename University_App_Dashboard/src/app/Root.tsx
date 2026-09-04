@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router";
-import { Navigation } from "./Navigation";
-import { Footer } from "./Footer";
 import { useEffect } from "react";
+import { Navigation } from "../components/layout/Navigation";
+import { Footer } from "../components/layout/Footer";
 
 export function Root() {
   const { pathname } = useLocation();

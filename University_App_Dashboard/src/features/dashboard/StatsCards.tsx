@@ -1,4 +1,4 @@
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent } from "../../components/ui/card";
 import { Users, BookOpen, GraduationCap, TrendingUp } from "lucide-react";
 
 const stats = [

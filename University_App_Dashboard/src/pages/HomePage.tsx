@@ -1,12 +1,12 @@
-import { StatsCards } from "./StatsCards";
-import { EnrollmentChart } from "./EnrollmentChart";
-import { DepartmentBreakdown } from "./DepartmentBreakdown";
-import { RecentActivities } from "./RecentActivities";
-import { GradeDistribution } from "./GradeDistribution";
-import { CourseTable } from "./CourseTable";
-import { Hero } from "./Hero";
-import { QuickLinks } from "./QuickLinks";
-import { ContactSection } from "./ContactSection";
+import { StatsCards } from "../features/dashboard/StatsCards";
+import { EnrollmentChart } from "../features/dashboard/EnrollmentChart";
+import { DepartmentBreakdown } from "../features/dashboard/DepartmentBreakdown";
+import { RecentActivities } from "../features/dashboard/RecentActivities";
+import { GradeDistribution } from "../features/dashboard/GradeDistribution";
+import { CourseTable } from "../features/dashboard/CourseTable";
+import { Hero } from "../components/layout/Hero";
+import { QuickLinks } from "../components/common/QuickLinks";
+import { ContactSection } from "../components/common/ContactSection";
 
 export function HomePage() {
   return (

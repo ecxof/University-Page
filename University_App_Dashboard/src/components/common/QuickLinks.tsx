@@ -1,4 +1,4 @@
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent } from "../ui/card";
 import { Calendar, FileText, BookOpen, Mail, CreditCard, Trophy } from "lucide-react";
 
 const quickLinks = [

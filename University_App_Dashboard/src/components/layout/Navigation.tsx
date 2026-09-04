@@ -1,8 +1,8 @@
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { Menu, Bell, Search, User, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router";
-import { SearchOverlay } from "./SearchOverlay";
+import { SearchOverlay } from "../common/SearchOverlay";
 
 const MOCK_UNREAD = 3;
 

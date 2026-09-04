@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router";
-import { Root } from "./components/Root";
-import { HomePage } from "./components/HomePage";
-import { AccountPage } from "./components/AccountPage";
-import { NotificationsPage } from "./components/NotificationsPage";
-import { AcademicsPage } from "./components/AcademicsPage";
-import { AdmissionsPage } from "./components/AdmissionsPage";
-import { CampusLifePage } from "./components/CampusLifePage";
+import { Root } from "./Root";
+import { HomePage } from "../pages/HomePage";
+import { AccountPage } from "../pages/AccountPage";
+import { NotificationsPage } from "../pages/NotificationsPage";
+import { AcademicsPage } from "../pages/AcademicsPage";
+import { AdmissionsPage } from "../pages/AdmissionsPage";
+import { CampusLifePage } from "../pages/CampusLifePage";
 
 export const router = createBrowserRouter([
   {
