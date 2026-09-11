@@ -1,8 +1,10 @@
 import { Button } from "../ui/button";
-import { Menu, Bell, Search, User, X } from "lucide-react";
+import { Menu, Bell, Search, User, X, Moon, Sun } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router";
+import { useTheme } from "next-themes";
 import { SearchOverlay } from "../common/SearchOverlay";
+import { ThemeToggle } from "../common/ThemeToggle";
 
 const MOCK_UNREAD = 3;
 
@@ -11,6 +13,8 @@ export function Navigation() {
   const [searchOpen, setSearchOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { resolvedTheme, setTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   const navLinks = [
     { name: "Home", href: "/", isRoute: true },
@@ -68,6 +72,9 @@ export function Navigation() {
 
             {/* Right Actions */}
             <div className="flex items-center gap-1">
+              {/* Theme toggle */}
+              <ThemeToggle className="hidden md:flex text-slate-500 hover:text-slate-900" />
+
               {/* Search */}
               <Button
                 variant="ghost"
@@ -191,6 +198,15 @@ export function Navigation() {
                 >
                   <User className="w-4 h-4" />
                   My Account
+                </button>
+
+                {/* Mobile Theme Toggle */}
+                <button
+                  className="flex items-center gap-3 text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors px-3 py-2 rounded-lg"
+                  onClick={() => setTheme(isDark ? "light" : "dark")}
+                >
+                  {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                  {isDark ? "Light mode" : "Dark mode"}
                 </button>
 
                 <Button className="w-full mt-2" onClick={() => setMobileMenuOpen(false)}>
